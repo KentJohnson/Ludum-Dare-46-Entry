@@ -16,6 +16,8 @@ var velocity = Vector2.ZERO
 var has_boost = true
 var boost_timer
 
+signal boosted
+
 func _ready():
 	boost_timer = Timer.new()
 	boost_timer.set_one_shot(true)
@@ -40,6 +42,7 @@ func _handle_input():
 	var direction = get_direction()
 	
 	if Input.is_action_just_pressed("dash") && has_boost:
+		emit_signal("boosted")
 		has_boost = false
 		boost_timer.set_wait_time(3)
 		boost_timer.start()

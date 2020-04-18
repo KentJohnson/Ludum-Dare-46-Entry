@@ -11,7 +11,7 @@ func _ready():
 func body_entered(body):
 	if not collected:
 		collected = true
-		GameManager.add_money(100)
+		GameManager.add_money(10)
 		animation_player.play("collected")
 		yield(animation_player, "animation_finished")
 		queue_free()

@@ -92,5 +92,5 @@ texture = ExtResource( 1 )
 hframes = 11
 
 [node name="Heart" type="Sprite" parent="."]
-position = Vector2( 0, 4.63507 )
+position = Vector2( 0, -4.87135 )
 texture = ExtResource( 2 )
