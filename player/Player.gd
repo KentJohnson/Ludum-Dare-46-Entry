@@ -13,8 +13,14 @@ onready var sprite = $KinematicBody2D/Sprite
 onready var animation_player = $AnimationPlayer
 
 var velocity = Vector2.ZERO
-var jump_released = false
+var has_boost = true
+var boost_timer
 
+func _ready():
+	boost_timer = Timer.new()
+	boost_timer.set_one_shot(true)
+	boost_timer.connect("timeout", self, "on_boost_timer_timeout")
+	add_child(boost_timer)
 
 func _physics_process(delta):
 	handle_gravity(delta)
@@ -33,7 +39,10 @@ func _handle_input():
 	
 	var direction = get_direction()
 	
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") && has_boost:
+		has_boost = false
+		boost_timer.set_wait_time(3)
+		boost_timer.start()
 		direction *= 10
 	velocity.x = lerp(velocity.x, MAX_SPEED * direction, .2)
 
@@ -68,3 +77,6 @@ func get_direction():
 		return -1
 	else:
 		return 0
+
+func on_boost_timer_timeout():
+	has_boost = true
