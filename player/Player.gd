@@ -13,6 +13,7 @@ onready var sprite = $KinematicBody2D/Sprite
 onready var animation_player = $AnimationPlayer
 onready var jump_sound = $JumpSound
 onready var run_sound = $RunSound
+onready var dash_sound = $DashSound
 
 var velocity = Vector2.ZERO
 var has_boost = true
@@ -58,6 +59,7 @@ func _handle_input():
 		footstep_timer.stop()
 	
 	if Input.is_action_just_pressed("dash") && has_boost:
+		dash_sound.play()
 		emit_signal("boosted")
 		has_boost = false
 		boost_timer.set_wait_time(3)

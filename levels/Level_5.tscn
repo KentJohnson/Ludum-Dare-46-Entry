@@ -36,7 +36,7 @@ rotation = 1.5708
 next_room = "res://Ludum Dare 46 Entry/levels/Level_6.tscn"
 
 [node name="Node2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 4, 176 )
+position = Vector2( -1, 176 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 464, -372 )

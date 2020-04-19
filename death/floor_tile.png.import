@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dickhead.png-dee50932ccd7c4b3482cce7c48d0fb39.stex"
+path="res://.import/floor_tile.png-39b8434e330840eefee4e4684481dedc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ludum Dare 46 Entry/dickhead/dickhead.png"
-dest_files=[ "res://.import/dickhead.png-dee50932ccd7c4b3482cce7c48d0fb39.stex" ]
+source_file="res://Ludum Dare 46 Entry/death/floor_tile.png"
+dest_files=[ "res://.import/floor_tile.png-39b8434e330840eefee4e4684481dedc.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

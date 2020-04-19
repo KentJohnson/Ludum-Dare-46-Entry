@@ -36,8 +36,4 @@ func take_love(love):
 
 func take_life():
 	life_counter -= 1
-	if life_counter < 0:
-		emit_signal("game_over")
-		reset()
-	else:
-		emit_signal("lives_changed", life_counter)
+	emit_signal("lives_changed", life_counter)

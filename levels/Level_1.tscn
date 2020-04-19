@@ -72,7 +72,7 @@ position = Vector2( 496, -384 )
 next_room = "res://Ludum Dare 46 Entry/levels/Level_2.tscn"
 
 [node name="DeathTrigger" parent="." instance=ExtResource( 7 )]
-position = Vector2( -148, 176 )
+position = Vector2( -2, 176 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( -368, 112 )

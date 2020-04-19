@@ -29,15 +29,16 @@ func _process(delta):
 func love_changed(love):
 	heart_bar.value = love
 	if heart_bar.value == 0:
-		# Game Over
-		print('game over')
-		pass
+		get_tree().change_scene("res://Ludum Dare 46 Entry/death/GameOver.tscn")
 
 func money_changed(money):
 	money_bar.value = money
 
 func lives_changed(lives):
-	life_counter.get_node("Counter").text = str(lives)
+	if lives < 0:
+		get_tree().change_scene("res://Ludum Dare 46 Entry/death/GameOver.tscn")
+	else:
+		life_counter.get_node("Counter").text = str(lives)
 
 func boosted():
 	boost_bar.value = 0
@@ -48,4 +49,4 @@ func load_room(room):
 	get_tree().get_root().remove_child(old_room)
 	old_room.queue_free()
 	current_room = room
-	add_child(current_room)
+	add_child(room)
