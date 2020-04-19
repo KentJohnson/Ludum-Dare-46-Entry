@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Ludum Dare 46 Entry/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ludum Dare 46 Entry/world/Clouds.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Ludum Dare 46 Entry/triggers/RoomTrigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Ludum Dare 46 Entry/triggers/DeathTrigger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Ludum Dare 46 Entry/death/Fire.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ludum Dare 46 Entry/collectibles/hoop/Hoop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ludum Dare 46 Entry/collectibles/money/Money.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -41,77 +43,106 @@ position = Vector2( -1, 176 )
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 464, -372 )
 
-[node name="Node2D3" parent="." instance=ExtResource( 6 )]
+[node name="FireContainer" type="Node2D" parent="."]
+
+[node name="Node2D3" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -368, 144 )
 
-[node name="Node2D4" parent="." instance=ExtResource( 6 )]
+[node name="Node2D4" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -336, 144 )
 
-[node name="Node2D5" parent="." instance=ExtResource( 6 )]
+[node name="Node2D5" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -304, 144 )
 
-[node name="Node2D6" parent="." instance=ExtResource( 6 )]
+[node name="Node2D6" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -272, 144 )
 
-[node name="Node2D7" parent="." instance=ExtResource( 6 )]
+[node name="Node2D7" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -240, 144 )
 
-[node name="Node2D8" parent="." instance=ExtResource( 6 )]
+[node name="Node2D8" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -208, 144 )
 
-[node name="Node2D9" parent="." instance=ExtResource( 6 )]
+[node name="Node2D9" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -176, 144 )
 
-[node name="Node2D10" parent="." instance=ExtResource( 6 )]
+[node name="Node2D10" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -80, 144 )
 
-[node name="Node2D11" parent="." instance=ExtResource( 6 )]
+[node name="Node2D11" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -48, 144 )
 
-[node name="Node2D12" parent="." instance=ExtResource( 6 )]
+[node name="Node2D12" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( -16, 144 )
 
-[node name="Node2D13" parent="." instance=ExtResource( 6 )]
+[node name="Node2D13" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 16, 144 )
 
-[node name="Node2D14" parent="." instance=ExtResource( 6 )]
+[node name="Node2D14" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 48, 144 )
 
-[node name="Node2D15" parent="." instance=ExtResource( 6 )]
+[node name="Node2D15" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 80, 144 )
 
-[node name="Node2D16" parent="." instance=ExtResource( 6 )]
+[node name="Node2D16" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 112, 144 )
 
-[node name="Node2D17" parent="." instance=ExtResource( 6 )]
+[node name="Node2D17" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 144, 144 )
 
-[node name="Node2D18" parent="." instance=ExtResource( 6 )]
+[node name="Node2D18" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 176, 144 )
 
-[node name="Node2D19" parent="." instance=ExtResource( 6 )]
+[node name="Node2D19" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 208, 144 )
 
-[node name="Node2D20" parent="." instance=ExtResource( 6 )]
+[node name="Node2D20" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 240, 144 )
 
-[node name="Node2D21" parent="." instance=ExtResource( 6 )]
+[node name="Node2D21" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 272, 144 )
 
-[node name="Node2D22" parent="." instance=ExtResource( 6 )]
+[node name="Node2D22" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 304, 144 )
 
-[node name="Node2D23" parent="." instance=ExtResource( 6 )]
+[node name="Node2D23" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 336, 144 )
 
-[node name="Node2D24" parent="." instance=ExtResource( 6 )]
+[node name="Node2D24" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 368, 144 )
 
-[node name="Node2D25" parent="." instance=ExtResource( 6 )]
+[node name="Node2D25" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 400, 144 )
 
-[node name="Node2D26" parent="." instance=ExtResource( 6 )]
+[node name="Node2D26" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 432, 144 )
 
-[node name="Node2D27" parent="." instance=ExtResource( 6 )]
+[node name="Node2D27" parent="FireContainer" instance=ExtResource( 6 )]
 position = Vector2( 464, 144 )
+
+[node name="Hoop" parent="." instance=ExtResource( 7 )]
+position = Vector2( 256, -196 )
+
+[node name="Hoop4" parent="." instance=ExtResource( 7 )]
+position = Vector2( -228, -160 )
+
+[node name="Hoop2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 32, 40 )
+
+[node name="Hoop3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -288, -160 )
+
+[node name="Money" parent="." instance=ExtResource( 8 )]
+position = Vector2( 288, 64 )
+
+[node name="Money5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 368, -372 )
+
+[node name="Money2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -128, -52 )
+
+[node name="Money4" parent="." instance=ExtResource( 8 )]
+position = Vector2( -368, 64 )
+
+[node name="Money3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -352, -384 )

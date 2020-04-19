@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Ludum Dare 46 Entry/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ludum Dare 46 Entry/world/Clouds.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Ludum Dare 46 Entry/death/Fire.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Ludum Dare 46 Entry/triggers/DeathTrigger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Ludum Dare 46 Entry/triggers/WinTrigger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ludum Dare 46 Entry/collectibles/money/Money.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ludum Dare 46 Entry/collectibles/hoop/Hoop.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,103 +31,120 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Fire4" parent="." instance=ExtResource( 4 )]
-position = Vector2( -80, 144 )
-
-[node name="Fire5" parent="." instance=ExtResource( 4 )]
-position = Vector2( -48, 144 )
-
-[node name="Fire6" parent="." instance=ExtResource( 4 )]
-position = Vector2( -16, 144 )
-
-[node name="Fire7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 16, 144 )
-
-[node name="Fire8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 48, 144 )
-
-[node name="Fire9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 80, 144 )
-
-[node name="Fire10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 144 )
-
-[node name="Fire11" parent="." instance=ExtResource( 4 )]
-position = Vector2( 144, 144 )
-
-[node name="Fire12" parent="." instance=ExtResource( 4 )]
-position = Vector2( 240, 144 )
-
-[node name="Fire13" parent="." instance=ExtResource( 4 )]
-position = Vector2( 272, 144 )
-
-[node name="Fire14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 304, 144 )
-
-[node name="Fire15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 336, 144 )
-
-[node name="Fire16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 368, 144 )
-
-[node name="Fire17" parent="." instance=ExtResource( 4 )]
-position = Vector2( 400, 144 )
-
-[node name="Fire18" parent="." instance=ExtResource( 4 )]
-position = Vector2( 432, 144 )
-
-[node name="Fire19" parent="." instance=ExtResource( 4 )]
-position = Vector2( 464, 144 )
-
-[node name="Fire20" parent="." instance=ExtResource( 4 )]
-position = Vector2( 208, 144 )
-frame = 1
-
-[node name="Fire21" parent="." instance=ExtResource( 4 )]
-position = Vector2( 176, 144 )
-frame = 1
-
-[node name="Fire22" parent="." instance=ExtResource( 4 )]
-position = Vector2( -112, 144 )
-frame = 1
-
-[node name="Fire23" parent="." instance=ExtResource( 4 )]
-position = Vector2( -144, 144 )
-frame = 1
-
-[node name="Fire24" parent="." instance=ExtResource( 4 )]
-position = Vector2( -176, 144 )
-frame = 1
-
-[node name="Fire25" parent="." instance=ExtResource( 4 )]
-position = Vector2( -208, 144 )
-frame = 1
-
-[node name="Fire26" parent="." instance=ExtResource( 4 )]
-position = Vector2( -240, 144 )
-frame = 1
-
-[node name="Fire27" parent="." instance=ExtResource( 4 )]
-position = Vector2( -272, 144 )
-frame = 1
-
-[node name="Fire28" parent="." instance=ExtResource( 4 )]
-position = Vector2( -304, 144 )
-frame = 1
-
-[node name="Fire29" parent="." instance=ExtResource( 4 )]
-position = Vector2( -336, 144 )
-frame = 1
-
-[node name="Fire30" parent="." instance=ExtResource( 4 )]
-position = Vector2( -368, 144 )
-frame = 1
-
-[node name="Node2D" parent="." instance=ExtResource( 5 )]
+[node name="DeathTrigger" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, 176 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( -224, -368 )
 
-[node name="Node2D2" parent="." instance=ExtResource( 6 )]
+[node name="WinTrigger" parent="." instance=ExtResource( 6 )]
 position = Vector2( 496, -384 )
+
+[node name="FireContainer" type="Node2D" parent="."]
+
+[node name="Fire4" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -80, 144 )
+
+[node name="Fire5" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -48, 144 )
+
+[node name="Fire6" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -16, 144 )
+
+[node name="Fire7" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 16, 144 )
+
+[node name="Fire8" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 48, 144 )
+
+[node name="Fire9" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 80, 144 )
+
+[node name="Fire10" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 112, 144 )
+
+[node name="Fire11" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 144, 144 )
+
+[node name="Fire12" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 240, 144 )
+
+[node name="Fire13" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 272, 144 )
+
+[node name="Fire14" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 304, 144 )
+
+[node name="Fire15" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 336, 144 )
+
+[node name="Fire16" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 368, 144 )
+
+[node name="Fire17" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 400, 144 )
+
+[node name="Fire18" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 432, 144 )
+
+[node name="Fire19" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 464, 144 )
+
+[node name="Fire20" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 208, 144 )
+frame = 1
+
+[node name="Fire21" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( 176, 144 )
+frame = 1
+
+[node name="Fire22" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -112, 144 )
+frame = 1
+
+[node name="Fire23" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -144, 144 )
+frame = 1
+
+[node name="Fire24" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -176, 144 )
+frame = 1
+
+[node name="Fire25" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -208, 144 )
+frame = 1
+
+[node name="Fire26" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -240, 144 )
+frame = 1
+
+[node name="Fire27" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -272, 144 )
+frame = 1
+
+[node name="Fire28" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -304, 144 )
+frame = 1
+
+[node name="Fire29" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -336, 144 )
+frame = 1
+
+[node name="Fire30" parent="FireContainer" instance=ExtResource( 4 )]
+position = Vector2( -368, 144 )
+frame = 1
+
+[node name="Money" parent="." instance=ExtResource( 7 )]
+position = Vector2( -240, -48 )
+
+[node name="Money2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -208, -48 )
+
+[node name="Hoop" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, -176 )
+
+[node name="Hoop3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 272, -304 )
+
+[node name="Hoop2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -320, -352 )
