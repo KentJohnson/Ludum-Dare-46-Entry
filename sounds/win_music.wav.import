@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/win_music.wav-0c45be9fcba21b7cabf2622863b91aff.sample"
+
+[deps]
+
+source_file="res://Ludum Dare 46 Entry/sounds/win_music.wav"
+dest_files=[ "res://.import/win_music.wav-0c45be9fcba21b7cabf2622863b91aff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
