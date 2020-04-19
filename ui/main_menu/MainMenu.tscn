@@ -1,0 +1,159 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Ludum Dare 46 Entry/world/bg.png" type="Texture" id=1]
+[ext_resource path="res://Ludum Dare 46 Entry/fonts/game_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Ludum Dare 46 Entry/ui/selector.png" type="Texture" id=3]
+[ext_resource path="res://Ludum Dare 46 Entry/collectibles/money/Money.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Ludum Dare 46 Entry/ui/heart_bar/HeartBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ludum Dare 46 Entry/ui/money_bar/MoneyBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ludum Dare 46 Entry/world/Clouds.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Ludum Dare 46 Entry/collectibles/hoop/Hoop.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Ludum Dare 46 Entry/girlfriend/girlfriend.png" type="Texture" id=10]
+[ext_resource path="res://Ludum Dare 46 Entry/ui/main_menu/StartGameTrigger.gd" type="Script" id=11]
+[ext_resource path="res://Ludum Dare 46 Entry/player/Player.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 20 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 432.0
+margin_top = 44.0
+margin_right = 561.0
+margin_bottom = 94.0
+custom_fonts/font = ExtResource( 2 )
+text = "MY GAME"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" type="Sprite" parent="."]
+position = Vector2( 960, 544 )
+texture = ExtResource( 3 )
+
+[node name="Instructions" type="VBoxContainer" parent="."]
+margin_left = 216.0
+margin_top = 100.0
+margin_right = 781.0
+margin_bottom = 258.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Movement" type="Label" parent="Instructions"]
+margin_right = 565.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 2 )
+text = "Left & Right Arrow Keys - Movement"
+align = 1
+
+[node name="Jump" type="Label" parent="Instructions"]
+margin_top = 54.0
+margin_right = 565.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 2 )
+text = "Space Bar - Jump"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boost" type="Label" parent="Instructions"]
+margin_top = 108.0
+margin_right = 565.0
+margin_bottom = 158.0
+custom_fonts/font = ExtResource( 2 )
+text = "Z - Boost"
+align = 1
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
+tile_data = PoolIntArray( 0, 12, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 11, 7, 0, 12, 7, 0, 13, 7, 0, 14, 7, 0, 15, 7, 0, 16, 7, 0, 17, 7, 0, 18, 7, 0, 19, 7, 0, 20, 7, 0, 21, 7, 0, 22, 7, 0, 23, 7, 0, 24, 7, 0, 25, 7, 0, 26, 7, 0, 27, 7, 0, 28, 7, 0, 29, 7, 0, 30, 7, 0, 31, 13, 0, 65536, 5, 0, 65567, 4, 0, 131072, 5, 0, 131103, 4, 0, 196608, 5, 0, 196639, 4, 0, 262144, 5, 0, 262175, 4, 0, 327680, 5, 0, 327711, 4, 0, 393216, 5, 0, 393247, 4, 0, 458752, 5, 0, 458783, 4, 0, 524288, 5, 0, 524319, 4, 0, 589824, 5, 0, 589831, 0, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589842, 2, 0, 589843, 2, 0, 589844, 2, 0, 589845, 2, 0, 589846, 2, 0, 589847, 1, 0, 589855, 4, 0, 655360, 5, 0, 655367, 4, 0, 655368, 19, 0, 655369, 19, 0, 655370, 19, 0, 655371, 19, 0, 655372, 19, 0, 655373, 19, 0, 655374, 19, 0, 655375, 19, 0, 655376, 19, 0, 655377, 19, 0, 655378, 19, 0, 655379, 19, 0, 655380, 19, 0, 655381, 19, 0, 655382, 19, 0, 655383, 5, 0, 655391, 4, 0, 720896, 5, 0, 720903, 4, 0, 720904, 19, 0, 720905, 19, 0, 720906, 19, 0, 720907, 19, 0, 720908, 19, 0, 720909, 19, 0, 720910, 19, 0, 720911, 19, 0, 720912, 19, 0, 720913, 19, 0, 720914, 19, 0, 720915, 19, 0, 720916, 19, 0, 720917, 19, 0, 720918, 19, 0, 720919, 5, 0, 720927, 4, 0, 786432, 5, 0, 786439, 4, 0, 786440, 19, 0, 786441, 19, 0, 786442, 19, 0, 786443, 19, 0, 786444, 19, 0, 786445, 19, 0, 786446, 19, 0, 786447, 19, 0, 786448, 19, 0, 786449, 19, 0, 786450, 19, 0, 786451, 19, 0, 786452, 19, 0, 786453, 19, 0, 786454, 19, 0, 786455, 5, 0, 786463, 4, 0, 851968, 5, 0, 851975, 4, 0, 851976, 19, 0, 851977, 19, 0, 851978, 19, 0, 851979, 19, 0, 851980, 19, 0, 851981, 19, 0, 851982, 19, 0, 851983, 19, 0, 851984, 19, 0, 851985, 19, 0, 851986, 19, 0, 851987, 19, 0, 851988, 19, 0, 851989, 19, 0, 851990, 19, 0, 851991, 5, 0, 851999, 4, 0, 917504, 5, 0, 917511, 4, 0, 917512, 19, 0, 917513, 19, 0, 917514, 19, 0, 917515, 19, 0, 917516, 19, 0, 917517, 19, 0, 917518, 19, 0, 917519, 19, 0, 917520, 19, 0, 917521, 19, 0, 917522, 19, 0, 917523, 19, 0, 917524, 19, 0, 917525, 19, 0, 917526, 19, 0, 917527, 5, 0, 917535, 4, 0, 983040, 5, 0, 983047, 3, 0, 983048, 7, 0, 983049, 7, 0, 983050, 7, 0, 983051, 7, 0, 983052, 7, 0, 983053, 7, 0, 983054, 7, 0, 983055, 7, 0, 983056, 7, 0, 983057, 7, 0, 983058, 7, 0, 983059, 7, 0, 983060, 7, 0, 983061, 7, 0, 983062, 7, 0, 983063, 8, 0, 983071, 3, 0, 1048576, 5, 0, 1114112, 5, 0, 1179648, 14, 0, 1179649, 2, 0, 1179650, 2, 0, 1179651, 2, 0, 1179652, 2, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 2, 0, 1179656, 2, 0, 1179657, 2, 0, 1179658, 2, 0, 1179659, 2, 0, 1179660, 2, 0, 1179661, 2, 0, 1179662, 2, 0, 1179663, 2, 0, 1179664, 2, 0, 1179665, 2, 0, 1179666, 2, 0, 1179667, 2, 0, 1179668, 2, 0, 1179669, 2, 0, 1179670, 2, 0, 1179671, 2, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1179675, 2, 0, 1179676, 2, 0, 1179677, 2, 0, 1179678, 2, 0, 1179679, 2, 0 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 401, 416 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 672, 416 )
+
+[node name="Control" parent="." instance=ExtResource( 6 )]
+margin_left = 288.0
+margin_top = 384.0
+margin_right = -672.0
+margin_bottom = -152.0
+value = 50.0
+
+[node name="Control2" parent="." instance=ExtResource( 7 )]
+margin_left = 576.0
+margin_top = 384.0
+margin_right = -384.0
+margin_bottom = -152.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 288.0
+margin_top = 328.0
+margin_right = 416.0
+margin_bottom = 376.0
+text = "Jump through hoops
+to keep your love 
+meter full"
+align = 1
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 424.0
+margin_top = 403.225
+margin_right = 577.0
+margin_bottom = 434.225
+text = "...or else your girlfriend 
+will leave you"
+align = 1
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 556.0
+margin_top = 328.0
+margin_right = 730.0
+margin_bottom = 376.0
+text = "Hoops cost money so 
+make sure you watch
+your money meter"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 496, 356 )
+texture = ExtResource( 10 )
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 764.0
+margin_top = 344.0
+margin_right = 999.0
+margin_bottom = 447.0
+custom_fonts/font = ExtResource( 2 )
+text = "Try to 
+wall jump!"
+align = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 1008, 544 )
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 80, 560 )

@@ -16,4 +16,4 @@ func _ready():
 	timer.start()
 
 func on_timeout():
-	get_tree().change_scene("res://Ludum Dare 46 Entry/world/World.tscn")
+	get_tree().change_scene("res://Ludum Dare 46 Entry/ui/main_menu/MainMenu.tscn")

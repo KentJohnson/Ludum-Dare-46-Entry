@@ -7,7 +7,6 @@ var life_counter = 5
 signal money_changed
 signal love_changed
 signal lives_changed
-signal game_over
 
 
 func reset():
