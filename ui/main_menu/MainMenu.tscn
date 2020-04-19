@@ -30,12 +30,12 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 432.0
+margin_left = 401.0
 margin_top = 44.0
-margin_right = 561.0
+margin_right = 615.0
 margin_bottom = 94.0
 custom_fonts/font = ExtResource( 2 )
-text = "MY GAME"
+text = "Super Simp Boy"
 uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
