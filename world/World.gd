@@ -3,15 +3,19 @@ extends Node2D
 onready var heart_bar = $HeartBar
 onready var money_bar = $MoneyBar
 onready var boost_bar = $BoostBar
-onready var player = $Player
+onready var current_room = $Level
 
 var boost_timer
 var last_boost
 
+
 func _ready():
 	GameManager.connect("love_changed", self, "love_changed")
 	GameManager.connect("money_changed", self, "money_changed")
-	player.connect("boosted", self, "boosted")
+	player().connect("boosted", self, "boosted")
+
+func player():
+	return current_room.get_node("Player")
 
 func _process(delta):
 	GameManager.take_love(10 * delta)
@@ -32,3 +36,11 @@ func money_changed(money):
 func boosted():
 	boost_bar.value = 0
 	last_boost = OS.get_unix_time()
+
+func load_room(room):
+	if current_room == null:
+		pass
+	else:
+		get_tree().get_root().remove_child(current_room)
+		current_room.queue_free()
+	current_room = room
