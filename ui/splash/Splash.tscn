@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Ludum Dare 46 Entry/ui/splash/Splash.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = -640.0
+margin_top = -336.0
+margin_right = 624.0
+margin_bottom = 356.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -80.0
+margin_right = 86.0
+margin_bottom = 48.0
+text = "A Game By Kent Johnson
+
+For Ludum Dare 46"

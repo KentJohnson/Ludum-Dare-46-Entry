@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Ludum Dare 46 Entry/triggers/RoomTrigger.gd" type="Script" id=1]
+[ext_resource path="res://Ludum Dare 46 Entry/triggers/DeathTrigger.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 24 )
+extents = Vector2( 1024, 12 )
 
 [node name="Node2D" type="Area2D"]
 script = ExtResource( 1 )
