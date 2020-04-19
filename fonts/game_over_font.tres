@@ -1,0 +1,7 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Ludum Dare 46 Entry/fonts/Blue Mist_PersonalUseOnly.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 40
+font_data = ExtResource( 1 )
